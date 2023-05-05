@@ -1,0 +1,44 @@
+.filled {
+  display: inline-block;
+  padding: 1.7rem 5.2rem;
+  font-size: 1.4rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.filled-primary {
+  background-color: #d52047;
+  color: #ffffff;
+}
+
+.filled-secondary {
+  background-color: #ffffff;
+  color: #d52047;
+}
+
+.outlined {
+  display: inline-block;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.outlined-primary {
+  color: #d52047;
+}
+
+.outlined-secondary {
+  color: #ffffff;
+}
+
+.disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}

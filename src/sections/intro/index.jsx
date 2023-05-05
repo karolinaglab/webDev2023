@@ -1,6 +1,7 @@
 import './index.css';
 import Heading from '../../components/heading';
 import Text from '../../components/text';
+import Button from "../../components/button";
 
 const Intro = () => {
   return (
@@ -12,7 +13,7 @@ const Intro = () => {
         <Text size='2.4rem' color="white" className="text">
           Cloud budget management for everyone. Only €69.95 a Month After a 7 Day Trial of <br/>Up to €4.99
         </Text>
-        <a href="#" className="btn">SIGN UP</a>
+        <Button href="#" variant="filled" color="secondary">Sign up</Button>
       </div>
     </div>
   )
