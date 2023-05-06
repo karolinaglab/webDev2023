@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./index.css";
 import FormInput from "../../components/formInput";
 import Button from "../../components/button";
+import Heading from "../../components/heading";
+import Text from "../../components/text";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -40,69 +42,70 @@ const Contact = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
     if (validate()) {
-      console.log(formData);
+      // send data
+    } else {
+      // handle error
     }
   };
 
   return (
-    <div className="contact">
-    <div className="container">
-      <div className="column">
-        <h2>Contact</h2>
-        <p className="section-text">
-          Questions or concerns? Just fill out the form below and our support
-          team will get back to you within 24 hours
-        </p>
+    <section className="contact">
+      <div className="container">
+        <div className="column">
+          <Heading level={2}>Contact</Heading>
+          <Text className="sectionText">
+            Questions or concerns? Just fill out the form below and our support
+            team will get back to you within 24 hours
+          </Text>
+        </div>
+        <div className="column">
+          <form onSubmit={handleSubmit}>
+            <div className="row">
+              <FormInput
+                type="text"
+                name="firstName"
+                placeholder="First Name"
+                error={errors.firstName}
+                value={formData.firstName}
+                onChange={handleChange}
+              />
+              <FormInput
+                type="text"
+                name="lastName"
+                placeholder="Last Name"
+                error={errors.lastName}
+                value={formData.lastName}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="row contactFormInput">
+              <FormInput
+                type="text"
+                name="phoneNumber"
+                placeholder="Phone Number"
+                error={errors.phoneNumber}
+                value={formData.phoneNumber}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="row contactFormInput">
+              <FormInput
+                type="text"
+                name="service"
+                placeholder="What Service are you interested in?"
+                error={errors.service}
+                value={formData.service}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="row contactFormInput">
+              <Button type="submit">Submit Now</Button>
+            </div>
+          </form>
+        </div>
       </div>
-      <div className="column">
-        <form onSubmit={handleSubmit}>
-          <div className="row">
-            <FormInput
-              type={"text"}
-              name={"firstName"}
-              placeholder={"First Name"}
-              error={errors.firstName}
-              value={formData.firstName}
-              onChange={handleChange}
-            />
-            <FormInput
-              type={"text"}
-              name={"lastName"}
-              placeholder={"Last Name"}
-              error={errors.lastName}
-              value={formData.lastName}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="row contactFormInput">
-            <FormInput
-              type={"text"}
-              name={"phoneNumber"}
-              placeholder={"Phone Number"}
-              error={errors.phoneNumber}
-              value={formData.phoneNumber}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="row contactFormInput">
-            <FormInput
-              type="text"
-              name="service"
-              placeholder="What Service are you interested in?"
-              error={errors.service}
-              value={formData.service}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="row contactFormInput">
-            <Button type="submit">Submit Now</Button>
-          </div>
-        </form>
-      </div>
-    </div>
-    </div>
+    </section>
   );
 };
 

@@ -12,7 +12,7 @@ const ImageCard = ({image, heading, text, link}) => {
       <div className='imageCard__content'>
         <Heading level={3}>{heading}</Heading>
         <Text className="imageCard__text"> {text} </Text>
-        <Button href={link} variant="outlined">Read More</Button>
+        <Button href={link} variant="text">Read More</Button>
       </div>
     </div>
   )
